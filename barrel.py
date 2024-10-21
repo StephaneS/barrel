@@ -258,7 +258,7 @@ override = {'scene' : bpy.context.scene,'region' : region,'area'   : area_view_3
 obj = bpy.context.edit_object   #you need to be in edit mode
 print('obj name = ',obj.name)  #obj that is currently under edit mode:  obj name =  Cylinder
 
-#C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190814_123634.jpg
+#E:/P2019/RN006562_capture_20190814_123634.jpg
 
 print("we are ok same picture")
 
@@ -297,7 +297,7 @@ Return a BMesh from this mesh, currently the mesh must already be in editmode
 bpy.ops.object.mode_set(mode='EDIT')
 #at this level we have from 0 to 35 edge for the cylinder so a total of 36 edges
 # 12 vertical
-# 2x 12 horizontal  C:/D/SSPublic/Public_ImageNote/2016/07_020_int003173_20160906_125017.jpg
+# 2x 12 horizontal  E:/P2016/07_020_int003173_20160906_125017.jpg
 
 
 '''
@@ -318,12 +318,12 @@ if(version >= 2.8):
 else:
 	add_loopcut_slide(override,edge_index,nb_cut)
 	
-#C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190814_130754.jpg
+#E:/P2019/RN006562_capture_20190814_130754.jpg
 
 
 #en reality quand du rajoute un surface diviser a un cylindre ca cree un structure complexe, avec les cotes en forme de ciseaux
 # c est normal car le nombre de face est multiplier par 10 -- face equi surface  c est pour ca que ca forme un boule
-#C:/D/SSPublic/Public_ImageNote/2017/RN006562_capture_20171105_173356.jpg
+#E:/P2017/RN006562_capture_20171105_173356.jpg
 # et si regarde la  top face  est constituee de multi face comme des parts de gateau
 # en rajoutant un edge loupe en haut et en bas , ca t'annule ce cisaillement et redonne la forme du cylinder
 
@@ -337,7 +337,7 @@ else:
 	bpy.ops.transform.resize(override,value=(0, 0, 3), constraint_axis=(False, False, True), constraint_orientation='GLOBAL', mirror=False, proportional_edit_falloff='SMOOTH', proportional_size=1)
 
 
-#C:/D/SSPublic/Public_ImageNote/2016/int003266_capture_20160911_153833.jpg
+#E:/P2016/int003266_capture_20160911_153833.jpg
 
 
 
@@ -384,7 +384,7 @@ obj = bpy.data.objects["Cylinder"]
 bpy.context.view_layer.objects.active = obj  # we select the Cylinder  object
 obj.select_set(True)
 
-#C:/D/SSPublic/Public_ImageNote/2020/RN006562_capture_20200615_080329.jpg
+#E:/P2020/RN006562_capture_20200615_080329.jpg
 
 
 #adapt the cylinder to the cylinder picture
@@ -398,13 +398,13 @@ factor = 3.12847
 
 if(version >= 2.8):
     bpy.ops.transform.resize(value=(factor, factor, factor), constraint_axis=(False, False, False), mirror=False, proportional_edit_falloff='SMOOTH', proportional_size=1)
-    #scale z  C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190814_133400.jpg
+    #scale z  E:/P2019/RN006562_capture_20190814_133400.jpg
     bpy.ops.transform.resize(value=(1, 1, 1.49343), constraint_axis=(False, False, True), mirror=False, proportional_edit_falloff='SMOOTH', proportional_size=1)
     #scale shift-z    on scale la circonference  en x et y  - il garde sa hauteur
     bpy.ops.transform.resize(value=(0.900938, 0.900938, 1), constraint_axis=(True, True, False), mirror=False,proportional_edit_falloff='SMOOTH', proportional_size=1)
 else:
     bpy.ops.transform.resize(value=(factor, factor, factor), constraint_axis=(False, False, False), mirror=False, proportional='DISABLED', proportional_edit_falloff='SMOOTH', proportional_size=1)
-    #scale z  C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190814_133400.jpg
+    #scale z  E:/P2019/RN006562_capture_20190814_133400.jpg
     bpy.ops.transform.resize(value=(0, 0, 1.49343), constraint_axis=(False, False, True), mirror=False, proportional='DISABLED', proportional_edit_falloff='SMOOTH', proportional_size=1)
     #scale shift-z    on scale la circonference  en x et y  - il garde sa hauteur
     bpy.ops.transform.resize(value=(0.900938, 0.900938, 0), constraint_axis=(True, True, False), mirror=False, proportional='DISABLED', proportional_edit_falloff='SMOOTH', proportional_size=1)
@@ -438,7 +438,7 @@ result  = bpy.ops.mesh.select_all(action='DESELECT')  #AKey : deselect all mesh
 #the next step is drawing the top of the barrel
 #let s select the top face - the id is 10
 
-#C:/D/SSPublic/Public_ImageNote/2016/int003267_capture_20160911_155457.jpg
+#E:/P2016/int003267_capture_20160911_155457.jpg
 
 select_faces(10)  #we select the top face, the top barrel disk face
 
@@ -485,20 +485,20 @@ bpy.ops.mesh.extrude_region_move()
 #scale x and y    en vue du dessu or fait l interieur du tonneau plus petit
 bpy.ops.transform.resize(value=(0.864725, 0.864725, 1), constraint_axis=(True, True, False), mirror=False,proportional_edit_falloff='SMOOTH', proportional_size=1)
 
-#C:/D/SSPublic/Public_ImageNote/20240829_120201.jpg
+#E:/P20240829_120201.jpg
 
 
 
 
 #Exclude profondeur en descendant on z
 bpy.ops.mesh.extrude_region_move(MESH_OT_extrude_region={"mirror":False}, TRANSFORM_OT_translate={"value":(0, 0, -0.799307), "constraint_axis":(False, False, True), "mirror":False,  "proportional_edit_falloff":'SMOOTH'})
-#C:/D/SSPublic/Public_ImageNote/2016/07_020_int003269_20160911_160236.jpg
+#E:/P2016/07_020_int003269_20160911_160236.jpg
 #Exclude
 
 
 bpy.ops.mesh.extrude_region_move()
 bpy.ops.transform.resize(value=(0.983494, 0.983494, 0), constraint_axis=(True, True, False), mirror=False,proportional_edit_falloff='SMOOTH', proportional_size=1)
-#C:/D/SSPublic/Public_ImageNote/2016/int003270_capture_20160911_160307.jpg
+#E:/P2016/int003270_capture_20160911_160307.jpg
 
 
 bpy.ops.object.mode_set(mode='EDIT')
@@ -534,7 +534,7 @@ else:
 bpy.ops.mesh.select_all(action='DESELECT')
 
 select_faces(45)
-#even if very thin face 45 is a face :C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190815_184535.jpg
+#even if very thin face 45 is a face :E:/P2019/RN006562_capture_20190815_184535.jpg
 #face 45 is a face on x y plan  // au convercle du tonneau
 
 if(version >= 4.2):
@@ -548,8 +548,8 @@ else:
     #add 5 lookup at the center  therefore parallel on the barrel lid
     add_loopcut_slide(override,45,5)
 
-#C:/D/SSPublic/Public_ImageNote/20240829_133201.jpg
-#C:/D/SSPublic/Public_ImageNote/2016/int003271_capture_20160911_161138.jpg
+#E:/P20240829_133201.jpg
+#E:/P2016/int003271_capture_20160911_161138.jpg
 
 
 
@@ -568,7 +568,7 @@ bpy.ops.mesh.select_more()  # select +vertice
 bpy.ops.mesh.select_more()  # select first line of face
 bpy.ops.mesh.select_more()
 bpy.ops.mesh.select_more()
-#C:/D/SSPublic/Public_ImageNote/2016/int003272_capture_20160911_162420.jpg
+#E:/P2016/int003272_capture_20160911_162420.jpg
 
 
 bpy.ops.mesh.delete(type='FACE')  #delete faces  => on a coupe le tonneau en 2 pour faire une symetrie
@@ -577,7 +577,7 @@ bpy.ops.mesh.delete(type='FACE')  #delete faces  => on a coupe le tonneau en 2 p
 
 ###		Make a symetry
 
-#C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190815_185811.jpg
+#E:/P2019/RN006562_capture_20190815_185811.jpg
 
 #set the front view
 
@@ -590,7 +590,7 @@ else:
 
 
 
-#C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190815_185833.jpg
+#E:/P2019/RN006562_capture_20190815_185833.jpg
 
 #select   vertice
 bpy.ops.mesh.select_mode(type="VERT")
@@ -598,7 +598,7 @@ bpy.ops.mesh.select_mode(type="VERT")
 #bpy.ops.mesh.select_mode(type="FACE")
 
 select_Vertices(83)
-#C:/D/SSPublic/Public_ImageNote/2016/int003279_capture_20160913_135339.jpg
+#E:/P2016/int003279_capture_20160913_135339.jpg
 
 
 
@@ -624,14 +624,14 @@ else:
             bpy.ops.view3d.snap_cursor_to_selected(override)
             break
 
-#C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190815_190308.jpg
+#E:/P2019/RN006562_capture_20190815_190308.jpg
 
 #OBJECT mode
 bpy.ops.object.mode_set(mode='OBJECT')
 
 #changing the object origin to cursor
 bpy.ops.object.origin_set(type='ORIGIN_CURSOR')
-#C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190815_190426.jpg
+#E:/P2019/RN006562_capture_20190815_190426.jpg
 
 
 #add mirror for the cylinder on z direction
@@ -643,7 +643,7 @@ if(version >= 2.8):
 else:
     bpy.context.object.modifiers["Mirror"].use_x = False
     bpy.context.object.modifiers["Mirror"].use_z = True
-#C:/D/SSPublic/Public_ImageNote/2016/int003280_capture_20160913_135903.jpg file not detected
+#E:/P2016/int003280_capture_20160913_135903.jpg file not detected
 
 
 
@@ -683,7 +683,7 @@ else:
     bpy.ops.transform.resize(value=(x+bigger, y+bigger, z+bigger), constraint_axis=(False, False, False), constraint_orientation='GLOBAL', mirror=False, proportional='DISABLED', proportional_edit_falloff='SMOOTH', proportional_size=1)
 
 
-#C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190815_191052.jpg
+#E:/P2019/RN006562_capture_20190815_191052.jpg
 
 
 
@@ -701,7 +701,7 @@ bpy.data.lattices["Lattice"].points_w = 7
 
 
 
-#C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190815_203724.jpg
+#E:/P2019/RN006562_capture_20190815_203724.jpg
 obj = bpy.data.objects["Lattice"]
 list(obj.data.points)
 
@@ -723,13 +723,13 @@ for x in range(20,24): #
     print("x=",x)
     obj.data.points[x].select = True
 
-#C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190815_204501.jpg
+#E:/P2019/RN006562_capture_20190815_204501.jpg
 if(version >= 2.8):
     bpy.ops.transform.resize(value=(1.1519, 1.1519, 1.1519), constraint_axis=(False, False, False), mirror=False, proportional_edit_falloff='SMOOTH', proportional_size=1)
 else:
     bpy.ops.transform.resize(value=(1.1519, 1.1519, 1.1519), constraint_axis=(False, False, False), constraint_orientation='GLOBAL', mirror=False, proportional='DISABLED', proportional_edit_falloff='SMOOTH', proportional_size=1)
-#C:/D/SSPublic/Public_ImageNote/2016/int003485_capture_20160915_153308.jpg
-#C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190815_204552.jpg
+#E:/P2016/int003485_capture_20160915_153308.jpg
+#E:/P2019/RN006562_capture_20190815_204552.jpg
 
 def deselect_lattice_vertice():
 	for x in range(0,28): #
@@ -786,7 +786,7 @@ deselect_lattice_vertice()
 
 # deselect the Lattice ans select the cylinder
 deselect_all_object()
-#C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190815_204905.jpg
+#E:/P2019/RN006562_capture_20190815_204905.jpg
 
 obj = bpy.data.objects["Cylinder"]
 if(version >= 2.8):
@@ -907,7 +907,7 @@ else:
     context.selected_objects[0]
     #r bpy.data.objects['Cylinder.001']
 
-    #C:/D/SSPublic/Public_ImageNote/2016/int003503_capture_20160915_153641.jpg
+    #E:/P2016/int003503_capture_20160915_153641.jpg
     #set WIREFRAME mode
     for area in bpy.context.screen.areas:
         if area.type == 'VIEW_3D':
@@ -916,7 +916,7 @@ else:
             break
            
 
-#C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190815_210343.jpg
+#E:/P2019/RN006562_capture_20190815_210343.jpg
 #the issue is that the Lattice is selected in the outliner , while I need to select the Cylinder001
 #sol
 
@@ -936,7 +936,7 @@ else:
             space_data.viewport_shade = 'SOLID'
             break
 
-#C:/D/SSPublic/Public_ImageNote/20240829_173300.jpg
+#E:/P20240829_173300.jpg
 
 
 
@@ -1014,14 +1014,14 @@ else:
     bpy.context.scene.objects['Cylinder.001'].select = False
     bpy.context.scene.objects['Rings'].select = True
     
-#C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190815_211956.jpg
+#E:/P2019/RN006562_capture_20190815_211956.jpg
 bpy.context.scene.objects['Rings'].type
 #MESH
 #display the object name in the 3D windows 
 bpy.context.scene.objects['Rings'].show_name = True
 
 
-#C:/D/SSPublic/Public_ImageNote/2016/int003521_capture_20160915_155614.jpg
+#E:/P2016/int003521_capture_20160915_155614.jpg
 
 bpy.ops.object.mode_set(mode='OBJECT')
 
@@ -1030,7 +1030,7 @@ if(version >= 2.8):
 else:
     #active the object *** it will be selected in white in the outliner
     bpy.context.scene.objects.active = bpy.data.objects["Rings"]
-    #C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190815_212130.jpg
+    #E:/P2019/RN006562_capture_20190815_212130.jpg
     #ca me fait passer en object mode alors que j'etais en dot
 
 
@@ -1057,7 +1057,7 @@ else:
 
 #Deselect all #AKey 
 bpy.ops.mesh.select_all(action='DESELECT')
-#C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190815_212303.jpg
+#E:/P2019/RN006562_capture_20190815_212303.jpg
 
 
 #maintenant il faut separer les 3 rings video 17mn15
@@ -1079,10 +1079,10 @@ for faceIndex in bm.faces:
  print(faceIndex)
 #allow to simulate the L Key, but you have to select a face before
 bpy.ops.mesh.select_linked()
-#C:/D/SSPublic/Public_ImageNote/2016/int003563_capture_20160917_143458.jpg
+#E:/P2016/int003563_capture_20160917_143458.jpg
 #separate P_Key
 bpy.ops.mesh.separate(type='SELECTED')   #ring 1 is created
-#C:/D/SSPublic/Public_ImageNote/2016/int003572_capture_20160917_143524.jpg
+#E:/P2016/int003572_capture_20160917_143524.jpg
 
 
 #which face is selected?
@@ -1169,11 +1169,11 @@ select_edges(164)  #un edge vertical
 
 #edge loop select
 bpy.ops.mesh.loop_multi_select(ring=False)
-#C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190815_213050.jpg
+#E:/P2019/RN006562_capture_20190815_213050.jpg
 
 #control-E  -> we mark the stream in red (the privious vertical line of edge become red
 bpy.ops.mesh.mark_seam()
-#C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190815_213125.jpg
+#E:/P2019/RN006562_capture_20190815_213125.jpg
 
 activeObj = get_active_obj() #get active  object 
 activeObj.name
@@ -1249,7 +1249,7 @@ img = bpy.data.images.load(filepath)
 bpy.context.scene.render.engine = 'CYCLES'
 
 #material creation
-#we add a material named Earth2  C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190815_214745.jpg
+#we add a material named Earth2  E:/P2019/RN006562_capture_20190815_214745.jpg
 mat_barrel_obj = add_material("mat_cylinder")
 
 
@@ -1270,12 +1270,12 @@ tree = obj_cylinder.active_material.node_tree
 nodes = tree.nodes
 links = tree.links
 list(nodes)
-#C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190815_215011.jpg
+#E:/P2019/RN006562_capture_20190815_215011.jpg
 nodeTexture = nodes.new(type='ShaderNodeTexImage') 
 nodeTexture.location = (100,0)
 node_add = nodeTexture
-#C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190815_215034.jpg
-#C:/D/SSPublic/Public_ImageNote/2016/int003617_capture_20160918_183524.jpg
+#E:/P2019/RN006562_capture_20190815_215034.jpg
+#E:/P2016/int003617_capture_20160918_183524.jpg
 #nodeDiffuse = nodes.new(type='ShaderNodeBsdfDiffuse')
 #nodeDiffuse.location = (200,0)
 
@@ -1298,20 +1298,20 @@ else:
 
 links.new(nodeTexture.outputs[0], nodeDiffuse.inputs[0])
 
-#C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190815_215155.jpg
+#E:/P2019/RN006562_capture_20190815_215155.jpg
 
 #links.new(nodeDiffuse.outputs[0], nodeMatOutput.inputs[0])
 #links.new(nodeTexture.outputs[0], nodeDiffuse.inputs[0])
 
 nodeTexture.image = bpy.data.images['TexturesCom_WoodPlanksClean0068_1_seamless_S.jpg']
-#C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190815_215322.jpg
+#E:/P2019/RN006562_capture_20190815_215322.jpg
 
 bpy.ops.object.mode_set(mode='EDIT')
 bpy.ops.uv.unwrap(method='ANGLE_BASED',fill_holes=True, correct_aspect=True, use_subsurf_data=True, margin=0.001)
 
 
-#C:/D/SSPublic/Public_ImageNote/2016/int003581_capture_20160917_150720.jpg
-#C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190816_094140.jpg   not good projection
+#E:/P2016/int003581_capture_20160917_150720.jpg
+#E:/P2019/RN006562_capture_20190816_094140.jpg   not good projection
 #bpy.ops.transform.rotate(value=-1.56876, axis=(-0, -0, -1), constraint_axis=(False, False, False), constraint_orientation='GLOBAL', mirror=False, proportional='DISABLED', proportional_edit_falloff='SMOOTH', proportional_size=1)
 
 
@@ -1367,7 +1367,7 @@ else:
 
 bpy.ops.uv.select_all(action='DESELECT')
 bpy.context.scene.tool_settings.uv_select_mode = 'EDGE'
-#C:/D/SSPublic/Public_ImageNote/20240830_183354.jpg
+#E:/P20240830_183354.jpg
 
 def special(x,y):
     print(x)
@@ -1404,17 +1404,17 @@ else:
     bpy.ops.uv.select_all(action='DESELECT')
     #Loop Select  in uv  - alt + mouse  right click
     bpy.ops.uv.select_loop(extend=False, location=(0.03, 0.36))
-    #C:/D/SSPublic/Public_ImageNote/2016/int003590_capture_20160917_150824.jpg
+    #E:/P2016/int003590_capture_20160917_150824.jpg
     #so you need to give the mouse position in normalised format, to get the position on the vertex, you can 
     #change the cursor position Left click
     #bpy.ops.utnv.cursor_set(location=(0.0116882, 0.010138))
     #the bottom left corner is the coor (0;0)   top right corner is (1;1)
     #to get the cursor position: n to open the info window; check la case Normalised
-    #C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190815_213954.jpg
+    #E:/P2019/RN006562_capture_20190815_213954.jpg
     #in uv alt-clik to select several vertice, then align them horizontaly
-    #C:/D/SSPublic/Public_ImageNote/2016/int003599_capture_20160917_150946.jpg
+    #E:/P2016/int003599_capture_20160917_150946.jpg
     bpy.context.scene.tool_settings.uv_select_mode = 'EDGE'
-    #C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190815_214304.jpg
+    #E:/P2019/RN006562_capture_20190815_214304.jpg
     bpy.ops.uv.align(axis='ALIGN_Y')
     bpy.ops.uv.select_loop(extend=False, location=(0.113, 0.172))
     bpy.ops.uv.align(axis='ALIGN_Y')
@@ -1489,7 +1489,7 @@ else:
          bpy.ops.uv.align(axis='ALIGN_X')
          print('ALIGN_X')
     
-#C:/D/SSPublic/Public_ImageNote/2016/int003608_capture_20160918_183139.jpg
+#E:/P2016/int003608_capture_20160918_183139.jpg
 
 if(version >= 2.8):
     space_view_3d.shading.type = 'WIREFRAME'
@@ -1982,7 +1982,7 @@ else:
     bpy.context.scene.objects.active = bpy.data.objects['Plane']
     bpy.ops.object.mode_set(mode='EDIT')
     bpy.ops.mesh.subdivide(number_cuts=25)
-    #C:/D/SSPublic/Public_ImageNote/2019/RN006562_capture_20190816_112125.jpg
+    #E:/P2019/RN006562_capture_20190816_112125.jpg
 
 #add modifier SUBSURF =>allows to subdivide the faces
 
@@ -2181,9 +2181,9 @@ exec(compile(open( "C:\E\Blend\Python\ss_launch2.py").read(), "C:\E\Blend\Python
 exec(compile(open( r"C:\E\Blend\Python\barrel.py").read(), r"C:\E\Blend\Python\barrel.py", 'exec'))
 
 '''
-C:/D/SSPublic/Public_ImageNote/20240830_210900.jpg
+E:/P/20240830_210900.jpg
 a partir d ici je fais render de l image ce qui prend 5mn
-voici le resultat du render
+voici le resultat du render: 
 '''
 for i in range(1,3):
     print(i)
