@@ -1,5 +1,5 @@
 #Cycle Render
-#E:/E/Blend/Python/barrel.py
+#C:\E\Git\barrel\barrel.py
 #open in the same scite this file
 #E:\E\Unity\ssreadme_unity_blender.c
 
@@ -2506,7 +2506,7 @@ for loop in bpy.data.loops :
 
 dddd
 exec(compile(open( "C:\E\Blend\Python\ss_launch2.py").read(), "C:\E\Blend\Python\ss_launch2.py", 'exec'))
-exec(compile(open( r"C:\E\Blend\Python\barrel.py").read(), r"C:\E\Blend\Python\barrel.py", 'exec'))
+exec(compile(open( r"C:\E\Git\barrel\barrel.py").read(), r"C:\E\Git\barrel\barrel.py", 'exec'))
 dddd
 root_folder = 'C:/E/Blend/'
 is_debug = False
@@ -2517,7 +2517,7 @@ exec(compile(open(filename).read(), filename, 'exec'))
 ##########################  STOPPED HERE    ########################## 
 dddd
 exec(compile(open( "C:\E\Blend\Python\ss_launch2.py").read(), "C:\E\Blend\Python\ss_launch2.py", 'exec'))
-exec(compile(open( r"C:\E\Blend\Python\barrel.py").read(), r"C:\E\Blend\Python\barrel.py", 'exec'))
+exec(compile(open( r"C:\E\Git\barrel\barrel.py").read(), r"C:\E\Git\barrel\barrel.py", 'exec'))
 
 
 '''
